@@ -5,7 +5,7 @@ WORKDIR /code
 ENV PATH="/code/.venv/bin:$PATH"
 COPY pyproject.toml .python-version uv.lock ./
 
-COPY pipeline.py  .
+COPY notebook.py  .
 RUN uv sync --locked
-ENTRYPOINT ["python", "pipeline.py"]
+ENTRYPOINT ["python", "notebook.py"]
 
